@@ -1,8 +1,20 @@
 # deploy-to-kurbenetes
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+```shell
+mvn quarkus:add-extensions -Dextensions="container-image-jib"
+```
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+```shell
+mvn quarkus:add-extensions -Dextensions="kubernetes"
+```
+
+```shell
+mvn clean package -Dquarkus.container-image.push=true
+```
+
+````shell
+mvn clean package -Dquarkus.kubernetes.deploy=true
+````
 
 ## Running the application in dev mode
 
